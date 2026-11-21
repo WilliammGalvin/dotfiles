@@ -1,0 +1,58 @@
+[user]
+    name = William Galvin
+    email = liam.galvin@bell.net
+
+[init]
+    defaultBranch = main
+
+[core]
+    pager = delta
+    editor = nvim
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[merge]
+    conflictStyle = zdiff3
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+
+[rerere]
+    enabled = true
+
+[alias]
+    st = status -sb
+    lg = log --oneline --graph --decorate
+    amend = commit --amend --no-edit
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = false
+    syntax-theme = base16
+    file-style = bold "#9db89a"
+    file-decoration-style = "#393939" ul
+    hunk-header-style = file line-number syntax
+    hunk-header-line-number-style = "#78a9ff"
+    line-numbers-left-style = "#525252"
+    line-numbers-right-style = "#525252"
+    line-numbers-plus-style = "#9db89a"
+    line-numbers-minus-style = "#ee5396"
+    plus-style = syntax "#243324"
+    plus-emph-style = syntax "#3b4a3a"
+    minus-style = syntax "#3a1f2b"
+    minus-emph-style = syntax "#5a2a40"

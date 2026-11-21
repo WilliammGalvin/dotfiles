@@ -1,0 +1,97 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$directory$git_branch$git_status$python$nodejs$rust$golang$status$cmd_duration$fill$time
+$character"""
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M"
+style = "#525252"
+
+# ── Prompt character ────────────────────────────────
+[character]
+success_symbol = "[❯](bold #9db89a)"
+error_symbol   = "[❯](bold #ee5396)"
+vimcmd_symbol  = "[❮](bold #be95ff)"
+
+# ── Path ────────────────────────────────────────────
+[directory]
+style = "bold #9db89a"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " ro"
+read_only_style = "#ee5396"
+
+# ── SSH only: user@host ─────────────────────────────
+[username]
+format = "[$user]($style)[@](#525252)"
+style_user = "#9db89a"
+style_root = "bold #ee5396"
+
+[hostname]
+ssh_only = true
+format = "[$hostname]($style)[ in ](#525252)"
+style = "#78a9ff"
+
+# ── Git ─────────────────────────────────────────────
+[git_branch]
+symbol = ""
+format = "[ $symbol$branch(:$remote_branch)]($style)"
+style = "#be95ff"
+
+[git_status]
+format = '([ \[$all_status$ahead_behind\]]($style))'
+style = "#ffe97b"
+conflicted = "="
+ahead      = "↑"
+behind     = "↓"
+diverged   = "↕"
+untracked  = "…"
+stashed    = "≡"
+modified   = "●"
+staged     = "✚"
+renamed    = "»"
+deleted    = "✘"
+
+# ── Languages (shown only inside matching projects) ─
+[python]
+symbol = "py "
+format = '[ $symbol($version )(\($virtualenv\))]($style)'
+style = "#78a9ff"
+
+[nodejs]
+symbol = "node "
+format = "[ $symbol($version)]($style)"
+style = "#08bdba"
+
+[rust]
+symbol = "rs "
+format = "[ $symbol($version)]($style)"
+style = "#ee5396"
+
+[golang]
+symbol = "go "
+format = "[ $symbol($version)]($style)"
+style = "#08bdba"
+
+# ── Exit status and duration ────────────────────────
+[status]
+disabled = false
+format = "[ ✘ $status]($style)"
+style = "#ee5396"
+
+[cmd_duration]
+min_time = 2000
+format = "[ $duration]($style)"
+style = "#525252"
+
+# ── Conda: hide the (base) clutter ──────────────────
+[conda]
+disabled = true
